@@ -22,7 +22,7 @@ class LeasesController < ApplicationController
     private 
 
     def lease_params
-        params.permit(:id, :rent, :tenant_id, :lease_id)
+        params.permit(:id, :rent, :apartment_id, :tenant_id)
     end 
 
 end

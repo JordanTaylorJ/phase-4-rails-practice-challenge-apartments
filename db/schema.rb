@@ -14,8 +14,6 @@ ActiveRecord::Schema.define(version: 2022_12_04_220344) do
 
   create_table "apartments", force: :cascade do |t|
     t.integer "number"
-    t.integer "tenant_id"
-    t.integer "lease_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -23,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_12_04_220344) do
   create_table "leases", force: :cascade do |t|
     t.integer "rent"
     t.integer "tenant_id"
-    t.integer "lease_id"
+    t.integer "apartment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -31,7 +29,6 @@ ActiveRecord::Schema.define(version: 2022_12_04_220344) do
   create_table "tenants", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.integer "lease_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
